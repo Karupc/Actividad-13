@@ -56,7 +56,7 @@ def calcular_promedio(estudiantes):
         print(f"Promedio de {estudiantes[id_estudiante]['Nombre']}: {promedio:.2f}\n")
     else:
         print("No hay cursos registrados")
-def verificar_aprobacion(estudiantes):
+def aprobado(estudiantes):
     while True:
         id_estudiante = input("Ingrese el ID del estudiante: ")
         if id_estudiante not in estudiantes:
@@ -112,7 +112,7 @@ while True:
             calcular_promedio(estudiantes)
         case "5":
             print("---VERIFICAR SI EL ESTUDIANTE APRUEBA---\n")
-            verificar_aprobacion()
+            aprobado()
         case "6":
             print("---MOSTRAR TODOS LOS ESTUDIANTES---\n")
             mostrar_todos()
