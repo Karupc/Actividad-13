@@ -63,7 +63,7 @@ def aprobado(estudiantes):
             print("El ID no fue encontrado, vuelva a intentar")
         if id_estudiante in estudiantes:
             break
-    cursos = estudiantes[id_estudiante]["cursos"]
+    cursos = estudiantes[id_estudiante]["Cursos"]
     if cursos:
         aprobados = all(nota >= 61 for nota in cursos.values())
         if aprobados:
@@ -72,17 +72,17 @@ def aprobado(estudiantes):
             print("No aprobó todos los cursos")
     else:
         print("No hay cursos registrados.")
-def mostrar_todos(estudiantes):
+def mostrar_estudiantes(estudiantes):
     if not estudiantes:
         print("No hay estudiantes registrados")
         return
     for id_estudiantes, datos in estudiantes.items():
         print(f"\nID: {id_estudiantes}")
-        print(f"Nombre: {datos['nombre']}")
-        print(f"Carrera: {datos['carrera']}")
-        if datos["cursos"]:
+        print(f"Nombre: {datos['Nombre']}")
+        print(f"Carrera: {datos['Carrera']}")
+        if datos["Cursos"]:
             print("Cursos y notas:")
-            for curso, nota in datos["cursos"].items():
+            for curso, nota in datos["Cursos"].items():
                 print(f"  {curso}: {nota}")
         else:
             print("Sin cursos registrados")
@@ -112,12 +112,12 @@ while True:
             calcular_promedio(estudiantes)
         case "5":
             print("---VERIFICAR SI EL ESTUDIANTE APRUEBA---\n")
-            aprobado()
+            aprobado(estudiantes)
         case "6":
             print("---MOSTRAR TODOS LOS ESTUDIANTES---\n")
-            mostrar_todos()
+            mostrar_estudiantes(estudiantes)
         case "7":
-            print("programa terminado, gracias por utilizarlo...")
+            print("Programa terminado, gracias por utilizarlo...")
             break
         case _:
             print("Opción inválida, vuelva a seleccionar la opción que desea")
