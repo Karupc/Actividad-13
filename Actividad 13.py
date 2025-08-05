@@ -21,6 +21,19 @@ def agregar_curso():
     else:
         print("La nota debe ser mayor o igual a 0 y menor o igual a 100")
 def consultar_estudiante():
+    id_estudiante = input("Ingrese el ID del estudiante: ")
+    if id_estudiante in estudiantes:
+        datos = estudiantes[id_estudiante]
+        print(f"\nNombre: {datos['Nombre']}")
+        print(f"Carrera: {datos['Carrera']}")
+        if datos["Cursos"]:
+            print("Cursos y notas:")
+            for curso, nota in datos["Cursos"].items():
+                print(f"  {curso}: {nota}")
+        else:
+            print("Cursos no registrados")
+    else:
+        print("No e encontró el ID")
 while True:
     print("---GESTIÓN ACADÉMICA---\n"
           "1.- Agregar estudiante\n"
